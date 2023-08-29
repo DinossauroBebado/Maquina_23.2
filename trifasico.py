@@ -1,6 +1,6 @@
 from math import pi, sqrt
 from numpy import sin, radians, linspace
-from matplotlib.pyplot import figure, grid, plot, show
+from matplotlib.pyplot import figure, grid, plot, show, title, xlabel, ylabel, legend
 
 
 class Rede_trifasica:
@@ -63,9 +63,16 @@ class FormaOnda:
         vbn = LINK.vbn(self.t)
         vcn = LINK.vcn(self.t)
         figure()
-        plot(self.t, van)
-        plot(self.t, vbn)
-        plot(self.t, vcn)
+        plot(self.t, van, label="van")
+        plot(self.t, vbn, label="vbn")
+        plot(self.t, vcn, label="vcn")
+
+        title("Rede trifasica")
+        xlabel("Time")
+        ylabel("U")
+        xlabel("Time")
+        ylabel("U")
+        legend()
         grid()
 
     def graficoTrafo3F(self, trafo3F):
@@ -73,7 +80,15 @@ class FormaOnda:
         vBN = trafo3F.vBN(self.t)
         vCN = trafo3F.vCN(self.t)
         figure()
-        plot(self.t, vAN)
-        plot(self.t, vBN)
-        plot(self.t, vCN)
+        plot(self.t, vAN, label="vAN")
+        plot(self.t, vBN, label="VBN")
+        plot(self.t, vCN, label="VCN")
+
+        title("Trafo")
+        xlabel("Time")
+        ylabel("U")
+
+        legend()
+        title("Trafo")
+
         grid()
